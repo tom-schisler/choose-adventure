@@ -314,49 +314,47 @@ template {
   --color-bg: #efefe;
   --color-text: #333;
   --color-accent: deeppink;
+  --spacing: 1.25rem;
   --font-sans: "Noto Sans", sans-serif;
   --font-serif: "Noto Serif", serif;
   --font-size: 1rem;
   --font-weight: normal;
-  --border-spacing: 0.5rem;
-  --border-radius: 0.5rem;
-  --border-color: #333;
-  --border-width: 0.125rem;
-  --border-style: solid;
-}
-
-html {
-  color-scheme: light dark;
-  scroll-behavior: smooth;
+  --line-height: 1.2;
+  --bp-sm: 37.5rem;
+  --bp-md: 50rem;
+  --bp-lg: 62.5rem;
+  --bp-xl: 75rem;
 }
 
 body {
-  font-family: system-ui;
-  font-size: 1.125rem;
-  line-height: 1.5;
+  font-family: var(--font-sans);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
   margin: 0;
   padding: 0;
 }
 
 ul {
-  margin: 0 1.25rem;
-  padding: 0 1.25rem;
+  margin: 0 var(--spacing);
+  padding: 0 var(--spacing);
   list-style: none;
   display: flex;
 }
 ul:not(:last-of-type) {
-  -webkit-margin-after: 1rem;
-          margin-block-end: 1rem;
+  -webkit-margin-after: var(--spacing);
+          margin-block-end: var(--spacing);
 }
 ul li {
   margin: 0;
-  padding: 0 0.25rem;
+  padding: 0 calc(var(--spacing) / 2);
 }
-ul li:not(:last-of-type):after {
-  content: " | ";
+ul li:not(:last-of-type) {
+  -webkit-padding-end: 0;
+          padding-inline-end: 0;
 }
 
 section {
@@ -364,49 +362,60 @@ section {
   padding: 0;
 }
 section:not(:last-of-type) {
-  -webkit-margin-after: 2rem;
-          margin-block-end: 2rem;
+  -webkit-margin-after: calc(var(--spacing) * 2);
+          margin-block-end: calc(var(--spacing) * 2);
 }
 section h2 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding-inline: 0.5rem;
-  -webkit-padding-after: 0.5rem;
-          padding-block-end: 0.5rem;
-  -webkit-margin-after: 1.25rem;
-          margin-block-end: 1.25rem;
-  border-bottom: 1px solid var(--color-accent);
+  padding-inline: calc(var(--spacing) / 2);
+  -webkit-padding-after: calc(var(--spacing) / 2);
+          padding-block-end: calc(var(--spacing) / 2);
+  -webkit-margin-after: var(--spacing);
+          margin-block-end: var(--spacing);
+  box-shadow: inset 0 -1px 0 0 var(--color-accent);
+}
+section h3 {
+  -webkit-margin-after: var(--spacing);
+          margin-block-end: var(--spacing);
 }
 
 details {
-  margin: 0 1.25rem;
-  padding: 0 1.25rem;
+  margin: 0 calc(var(--spacing) / 2);
+  padding: 0 var(--spacing);
+}
+@media (width >= 50rem) {
+  details {
+    margin-inline: 0;
+  }
 }
 details:not(:last-of-type) {
-  -webkit-margin-after: 1rem;
-          margin-block-end: 1rem;
+  -webkit-margin-after: var(--spacing);
+          margin-block-end: var(--spacing);
 }
 details[open] summary {
-  -webkit-margin-after: 1.25rem;
-          margin-block-end: 1.25rem;
+  -webkit-margin-after: var(--spacing);
+          margin-block-end: var(--spacing);
 }
 details summary {
-  margin: 0 -1.25rem;
+  margin: 0 calc(var(--spacing) * -1);
   padding: 0;
-  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: calc(var(--font-size) * 1.5);
   font-weight: bold;
   cursor: pointer;
 }
 details summary::marker {
   content: "♥ ";
-  font-size: 1.25rem;
+  font-size: var(--font-size);
   font-weight: normal;
   color: var(--color-accent);
 }
 
-button {
-  cursor: pointer;
+html {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -416,37 +425,39 @@ body {
 }
 body > header {
   flex: 0 1 auto;
-  padding: 0.5rem 1.25rem;
+  padding: calc(var(--spacing) / 2) var(--spacing);
   margin: 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  gap: 1.25rem;
+  gap: calc(var(--spacing) / 2);
   background: rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 -1px 0 0 var(--color-accent);
 }
-@media (width >= 62.5em) {
+@media (width >= 50rem) {
   body > header {
-    padding-block: 1.25rem;
+    padding-block: var(--spacing);
     align-items: center;
     flex-flow: row nowrap;
   }
 }
 body > main {
   flex: 1 1 100%;
-  padding: 1.25rem;
+  padding: var(--spacing);
   margin: 0;
 }
 body > footer {
   flex: 0 1 auto;
-  padding: 0.5rem 1.25rem;
+  padding: calc(var(--spacing) / 2) var(--spacing);
   margin: 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
   background: rgba(0, 0, 0, 0.25);
-  gap: 1.25rem;
+  box-shadow: inset 0 1px 0 0 var(--color-accent);
+  gap: calc(var(--spacing) / 2);
 }
-@media (width >= 62.5em) {
+@media (width >= 50rem) {
   body > footer {
     align-items: center;
     flex-flow: row nowrap;
