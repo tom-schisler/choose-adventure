@@ -339,8 +339,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ul {
-  margin: 0 var(--spacing);
-  padding: 0 var(--spacing);
+  margin: 0 var(--spacing) 0 calc(var(--spacing) / 2);
+  padding: 0 var(--spacing) 0 calc(var(--spacing) / 2);
   list-style: none;
   display: flex;
 }
@@ -350,7 +350,7 @@ ul:not(:last-of-type) {
 }
 ul li {
   margin: 0;
-  padding: 0 calc(var(--spacing) / 2);
+  padding: 0 0 0 calc(var(--spacing) / 2);
 }
 ul li:not(:last-of-type) {
   -webkit-padding-end: 0;
