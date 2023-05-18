@@ -1,0 +1,26 @@
+:root {
+    // colors 
+    --color-bg: #efefe;
+    --color-text: #333;
+    --color-accent: deeppink;
+
+    // fonts
+    --font-sans: 'Noto Sans', sans-serif;
+    --font-serif: 'Noto Serif', serif;
+    --font-size: 1rem;
+    --font-weight: normal;
+
+    // border 
+    --border-spacing: 0.5rem;
+    --border-radius: 0.5rem;
+    --border-color: #333;
+    --border-width: 0.125rem;
+    --border-style: solid;
+
+    // // dark mode 
+    // @media (prefers-color-scheme: dark) {
+    //     --color-bg: #333;
+    //     --color-text: #efefef;
+    // }
+}
+

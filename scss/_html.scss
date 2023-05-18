@@ -1,0 +1,85 @@
+html {
+    color-scheme: light dark;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+ul {
+    margin: 0 1.25rem; 
+    padding: 0 1.25rem;
+    list-style: none;
+    display: flex;
+    &:not(:last-of-type) {
+        margin-block-end: 1rem;
+    }
+    li {
+        margin: 0;
+        padding: 0 0.25rem;
+        &:not(:last-of-type) {
+            &:after {
+                content: " | ";
+            }
+        }
+    }
+}
+
+
+section {
+    margin: 0; 
+    padding: 0;
+    &:not(:last-of-type) {
+        margin-block-end: 2rem;
+    }
+
+    h2 {
+        width:fit-content;
+        padding-inline: 0.5rem;
+        padding-block-end: 0.5rem;
+        margin-block-end: 1.25rem;
+        border-bottom: 1px solid var(--color-accent);
+    }
+    
+}
+
+details {
+    margin: 0 1.25rem; 
+    padding: 0 1.25rem;
+    &:not(:last-of-type) {
+        margin-block-end: 1rem;
+    }
+    &[open] {
+        summary {
+            margin-block-end: 1.25rem;
+        }
+    }
+    summary {
+        margin: 0 -1.25rem;
+        padding: 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        &::marker {
+            content: "\2665 \20";
+            font-size: 1.25rem;
+            font-weight: normal;
+            color: var(--color-accent);
+        }
+          
+    }
+}
+
+button {
+    cursor: pointer;
+}
